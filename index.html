@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>過去のイベント | REALVALUE STUDENTS</title>
+<meta name="description" content="REALVALUE STUDENTSがこれまで開催してきたイベントの記録です。関西・関東それぞれの活動の様子を紹介しています。">
+
+<!-- ============ OGP設定 ============ -->
+<!-- og:url / og:image はGitHub Pages公開URL(https://rvss-official.github.io/rvss.activity.archive/)を反映済み -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="過去のイベント | REALVALUE STUDENTS">
+<meta property="og:description" content="REALVALUE STUDENTSがこれまで開催してきたイベントの記録です。関西・関東それぞれの活動の様子を紹介しています。">
+<meta property="og:url" content="https://rvss-official.github.io/rvss.activity.archive/">
+<meta property="og:image" content="https://rvss-official.github.io/rvss.activity.archive/images/hero-award.webp">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="過去のイベント | REALVALUE STUDENTS">
+<meta name="twitter:description" content="REALVALUE STUDENTSがこれまで開催してきたイベントの記録です。">
+<meta name="twitter:image" content="https://rvss-official.github.io/rvss.activity.archive/images/hero-award.webp">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-950:#060a14;
+    --navy-900:#0a1830;
+    --navy-800:#12294b;
+    --navy-700:#1b3868;
+    --gold:#c9a227;
+    --gold-light:#e7c766;
+    --cream:#f1eee4;
+    --cream-dim:#c7c3b6;
+  }
+
+  *{box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    margin:0;
+    background:var(--navy-950);
+    color:var(--cream);
+    font-family:"Noto Sans JP","Zen Kaku Gothic New",sans-serif;
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3,.jp-head{
+    font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;
+    font-weight:900;
+    letter-spacing:.02em;
+    margin:0;
+  }
+
+  a{color:inherit;text-decoration:none;}
+
+  img{display:block;max-width:100%;}
+
+  .wrap{
+    max-width:1120px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  /* ---------- Top bar ---------- */
+  header.topbar{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(6,10,20,.85);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(201,162,39,.25);
+  }
+  header.topbar .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    height:64px;
+  }
+  .brand img{
+    height:32px;
+    width:auto;
+    display:block;
+  }
+  header.topbar nav a{
+    font-size:.85rem;
+    color:var(--cream-dim);
+    margin-left:28px;
+    transition:color .2s;
+  }
+  header.topbar nav a:hover{color:var(--gold-light);}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    min-height:78vh;
+    display:flex;
+    align-items:flex-end;
+    overflow:hidden;
+    border-bottom:1px solid rgba(201,162,39,.3);
+  }
+  .hero-bg{
+    position:absolute;
+    inset:0;
+    background-image:url("images/hero-award.webp");
+    background-size:cover;
+    background-position:center 30%;
+    filter:grayscale(35%) brightness(.55);
+    transform:scale(1.02);
+  }
+  .hero-overlay{
+    position:absolute;
+    inset:0;
+    background:
+      linear-gradient(180deg, rgba(6,10,20,.35) 0%, rgba(6,10,20,.55) 55%, var(--navy-950) 100%),
+      linear-gradient(90deg, rgba(10,24,48,.55) 0%, rgba(10,24,48,0) 55%);
+  }
+  .hero-content{
+    position:relative;
+    padding:120px 0 64px;
+    padding-left:clamp(24px, 6vw, 96px);
+    width:100%;
+  }
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-size:.8rem;
+    color:var(--gold-light);
+    margin-bottom:22px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:28px;
+    height:2px;
+    background:var(--gold);
+  }
+  .hero h1{
+    font-size:clamp(2.4rem, 6vw, 4.4rem);
+    line-height:1.25;
+    color:var(--cream);
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--gold-light);
+  }
+  .hero p{
+    max-width:520px;
+    margin-top:22px;
+    color:var(--cream-dim);
+    font-size:1rem;
+  }
+
+  /* ---------- Ticker ---------- */
+  .ticker{
+    background:var(--navy-900);
+    border-top:1px solid rgba(201,162,39,.25);
+    border-bottom:1px solid rgba(201,162,39,.25);
+    overflow:hidden;
+    white-space:nowrap;
+    padding:16px 0;
+  }
+  .ticker-track{
+    display:inline-flex;
+    animation:scroll 34s linear infinite;
+  }
+  .ticker-track span{
+    font-family:"Zen Kaku Gothic New",sans-serif;
+    font-weight:700;
+    font-size:1rem;
+    color:var(--gold);
+    padding:0 20px;
+    display:inline-flex;
+    align-items:center;
+  }
+  .ticker-track span::after{
+    content:"・";
+    margin-left:20px;
+    color:var(--cream-dim);
+  }
+  @keyframes scroll{
+    0%{transform:translateX(0);}
+    100%{transform:translateX(-25%);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .ticker-track{animation:none;}
+  }
+
+  /* ---------- Section heading ---------- */
+  .section{
+    padding:88px 0;
+  }
+  .section-head{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:20px;
+    margin-bottom:48px;
+    border-bottom:1px solid rgba(201,162,39,.25);
+    padding-bottom:28px;
+  }
+  .section-head h2{
+    font-size:clamp(1.6rem, 3vw, 2.2rem);
+  }
+  .section-head p{
+    color:var(--cream-dim);
+    font-size:.92rem;
+    max-width:380px;
+    margin:0;
+  }
+
+  /* ---------- Filters ---------- */
+  .filters{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+  }
+  .filter-btn{
+    font-family:"Zen Kaku Gothic New",sans-serif;
+    font-size:.85rem;
+    font-weight:700;
+    padding:9px 20px;
+    border-radius:999px;
+    border:1px solid rgba(201,162,39,.4);
+    background:transparent;
+    color:var(--cream-dim);
+    cursor:pointer;
+    transition:all .2s;
+  }
+  .filter-btn:hover{border-color:var(--gold);color:var(--cream);}
+  .filter-btn.active,
+  .filter-btn[aria-pressed="true"]{
+    background:var(--gold);
+    border-color:var(--gold);
+    color:var(--navy-950);
+  }
+
+  /* ---------- Event grid ---------- */
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:32px;
+  }
+  @media (max-width:760px){
+    .grid{grid-template-columns:1fr;}
+  }
+
+  .card{
+    background:var(--navy-900);
+    border:1px solid rgba(201,162,39,.2);
+    overflow:hidden;
+  }
+
+  .card-media{
+    position:relative;
+    aspect-ratio:4/3;
+    overflow:hidden;
+    background:var(--navy-800);
+  }
+  .card-media img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+
+  .card-media.split{
+    display:grid;
+    grid-template-columns:1.4fr 1fr;
+    grid-template-rows:1fr 1fr;
+    gap:2px;
+  }
+  .card-media.split img:first-child{grid-row:1/3;}
+
+  .badge{
+    position:absolute;
+    top:14px;
+    left:14px;
+    z-index:2;
+    font-family:"Zen Kaku Gothic New",sans-serif;
+    font-size:.72rem;
+    font-weight:700;
+    padding:5px 14px;
+    border-radius:999px;
+    letter-spacing:.04em;
+  }
+  .badge.kansai{background:var(--gold);color:var(--navy-950);}
+  .badge.kanto{background:var(--navy-700);color:var(--cream);border:1px solid rgba(255,255,255,.25);}
+
+  .card-body{padding:26px 26px 30px;}
+  .card-body h3{
+    font-size:1.25rem;
+    color:var(--cream);
+    margin-bottom:10px;
+  }
+  .card-meta{
+    font-family:"Zen Kaku Gothic New",sans-serif;
+    font-size:.78rem;
+    color:var(--gold-light);
+    letter-spacing:.03em;
+    margin:0 0 12px;
+  }
+  .card-body p{
+    color:var(--cream-dim);
+    font-size:.92rem;
+    margin:0;
+  }
+
+  .empty-state{
+    grid-column:1/-1;
+    text-align:center;
+    padding:64px 24px;
+    border:1px dashed rgba(201,162,39,.35);
+    color:var(--cream-dim);
+  }
+  .empty-state strong{
+    display:block;
+    color:var(--gold-light);
+    font-family:"Zen Kaku Gothic New",sans-serif;
+    font-size:1.1rem;
+    margin-bottom:8px;
+  }
+
+  /* ---------- CTA ---------- */
+  .cta{
+    background:linear-gradient(135deg, var(--navy-900), var(--navy-950));
+    border-top:1px solid rgba(201,162,39,.3);
+    padding:96px 0;
+    text-align:center;
+  }
+  .cta h2{
+    font-size:clamp(1.6rem,3.4vw,2.4rem);
+    margin-bottom:20px;
+  }
+  .cta p{
+    color:var(--cream-dim);
+    max-width:420px;
+    margin:0 auto 36px;
+    font-size:.95rem;
+  }
+  .btn-line{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:var(--gold);
+    color:var(--navy-950);
+    font-family:"Zen Kaku Gothic New",sans-serif;
+    font-weight:700;
+    font-size:.95rem;
+    padding:16px 36px;
+    border-radius:999px;
+    transition:background .2s, transform .2s;
+  }
+  .btn-line:hover{background:var(--gold-light);transform:translateY(-2px);}
+
+  /* ---------- Footer ---------- */
+  footer{
+    padding:40px 0;
+    border-top:1px solid rgba(201,162,39,.2);
+  }
+  footer .wrap{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  footer p{
+    margin:0;
+    font-size:.78rem;
+    color:var(--cream-dim);
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <div class="brand">
+      <img src="images/logo.webp" alt="REALVALUE STUDENTS" width="180" height="96">
+    </div>
+    <nav>
+      <a href="#join">合同説明会</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content wrap">
+    <div class="eyebrow">RVSS ACTIVITY ARCHIVE</div>
+    <h1>これまでの挑戦を、<br><em>すべてここに。</em></h1>
+    <p>REALVALUE STUDENTSがこれまで開催してきたイベントの記録です。<br>実際の活動の様子から、雰囲気を感じてください。</p>
+  </div>
+</section>
+
+<div class="ticker">
+  <div class="ticker-track" id="tickerTrack">
+    <span>この国を、もう一度、挑戦者に。</span>
+    <span>学ぶ・実践する・繋がる</span>
+    <span>必要なのは「本気」と「覚悟」だけ。</span>
+    <span>次に挑戦するのは、あなたかもしれない</span>
+    <span>この国を、もう一度、挑戦者に。</span>
+    <span>学ぶ・実践する・繋がる</span>
+    <span>必要なのは「本気」と「覚悟」だけ。</span>
+    <span>次に挑戦するのは、あなたかもしれない</span>
+    <span>この国を、もう一度、挑戦者に。</span>
+    <span>学ぶ・実践する・繋がる</span>
+    <span>必要なのは「本気」と「覚悟」だけ。</span>
+    <span>次に挑戦するのは、あなたかもしれない</span>
+    <span>この国を、もう一度、挑戦者に。</span>
+    <span>学ぶ・実践する・繋がる</span>
+    <span>必要なのは「本気」と「覚悟」だけ。</span>
+    <span>次に挑戦するのは、あなたかもしれない</span>
+  </div>
+</div>
+
+<section class="section" id="events">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2>過去のイベント</h2>
+        <p>関西・関東、それぞれの拠点で行われてきた活動を紹介します。</p>
+      </div>
+      <div class="filters" id="filters" role="group" aria-label="開催エリアで絞り込む">
+        <button class="filter-btn active" data-filter="all" aria-pressed="true">すべて</button>
+        <button class="filter-btn" data-filter="kansai" aria-pressed="false">関西</button>
+        <button class="filter-btn" data-filter="kanto" aria-pressed="false">関東</button>
+      </div>
+    </div>
+
+    <div class="grid" id="eventGrid">
+
+      <!-- ============ イベント: リアルディシジョン ============ -->
+      <article class="card" data-region="kansai">
+        <div class="card-media">
+          <span class="badge kansai">関西</span>
+          <img src="images/real-decision.webp" alt="リアルディシジョンの様子" width="1100" height="825" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3>リアルディシジョン</h3>
+          <!-- 参加人数は実際の数値に差し替えてください -->
+          <p class="card-meta">2026.8.22 ・ 参加17名</p>
+          <p>外部の大学生を巻き込み、経営をテーマにした実践型ワークショップを実施しました。学外の学生と議論を重ねながら、実践的な思考力を養う機会になりました。</p>
+        </div>
+      </article>
+
+      <!-- ============ イベント: RVSS MIX ============ -->
+      <article class="card" data-region="kansai kanto">
+        <div class="card-media">
+          <span class="badge kansai">関西</span>
+          <span class="badge kanto" style="left:70px;">関東</span>
+          <img src="images/sokocha-1.webp" alt="RVSS MIXの様子" width="900" height="506" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3>RVSS MIX</h3>
+          <!-- 参加人数は実際の数値に差し替えてください -->
+          <p class="card-meta">2026.8.6 ・ 参加22名</p>
+          <p>全国のRVSSメンバーがオンラインで繋がる、エリア横断のプロジェクトです。実務や就活のグループディスカッションで活きる、実践的なビジネス力を鍛える機会になりました。</p>
+        </div>
+      </article>
+
+      <!-- ============ イベント: 新歓BBQ（関西） ============ -->
+      <article class="card" data-region="kansai">
+        <div class="card-media">
+          <span class="badge kansai">関西</span>
+          <img src="images/bbq-kansai-1.webp" alt="新歓BBQ（関西）の様子" width="900" height="675" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3>新歓BBQ（関西）</h3>
+          <!-- 参加人数は実際の数値に差し替えてください -->
+          <p class="card-meta">2026.4.26 ・ 参加35名</p>
+          <p>新大学生を歓迎するBBQを関西で開催しました。大学の枠を超えて集まったメンバーと、新しい仲間との交流を深める機会になりました。</p>
+        </div>
+      </article>
+
+      <!-- ============ イベント: REALVALUE AWARD ============ -->
+      <article class="card" data-region="kanto">
+        <div class="card-media">
+          <span class="badge kanto">関東</span>
+          <img src="images/award.webp" alt="REALVALUE AWARDの様子" width="1100" height="734" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3>REALVALUE AWARD</h3>
+          <!-- 参加人数は実際の数値に差し替えてください -->
+          <p class="card-meta">2025.12.16 ・ 参加20名</p>
+          <p>日本一影響力のある経営者コミュニティ「REALVALUE CLUB」の年間表彰式に登壇しました。第一線の経営者を前に、RVSS始動を発表する機会になりました。</p>
+        </div>
+      </article>
+
+      <!-- ============ イベント: 新歓BBQ（関東） ============ -->
+      <article class="card" data-region="kanto">
+        <div class="card-media">
+          <span class="badge kanto">関東</span>
+          <img src="images/bbq-kanto.webp" alt="新歓BBQ（関東）の様子" width="1100" height="733" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3>新歓BBQ（関東）</h3>
+          <!-- 参加人数は実際の数値に差し替えてください -->
+          <p class="card-meta">2026.4.19 ・ 参加18名</p>
+          <p>新大学生を歓迎するBBQを関東で開催しました。学年や大学の枠を超えて集まったメンバーと、新しい仲間との交流を深める機会になりました。</p>
+        </div>
+      </article>
+
+      <!-- ============ イベント: 関東交流会 ============ -->
+      <article class="card" data-region="kanto">
+        <div class="card-media">
+          <span class="badge kanto">関東</span>
+          <img src="images/kanto-mixer.webp" alt="関東交流会の様子" width="1100" height="825" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3>関東交流会</h3>
+          <!-- 参加人数は実際の数値に差し替えてください -->
+          <p class="card-meta">2025.12.14 ・ 参加25名</p>
+          <p>関東在住のRVSSメンバーが集まる、大規模な交流会を開催しました。普段関わりの少ないメンバー同士がつながり、横のネットワークを広げる機会になりました。</p>
+        </div>
+      </article>
+
+      <!-- ============ イベント: 渡部剛さんオフ会 ============ -->
+      <article class="card" data-region="kanto">
+        <div class="card-media">
+          <span class="badge kanto">関東</span>
+          <img src="images/watabe-offkai.webp" alt="渡部剛さんオフ会の様子" width="1100" height="733" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3>渡部剛さんオフ会</h3>
+          <!-- 参加人数は実際の数値に差し替えてください -->
+          <p class="card-meta">2026.1.11 ・ 参加11名</p>
+          <p>REALVALUEマフィア・&グループ代表の渡部剛さんにピッチを実施し、食事の場もご一緒しました。第一線の経営者から直接学べる、縦のつながりを得る機会になりました。</p>
+        </div>
+      </article>
+
+      <!-- ============ イベント: 餅つき大会 ============ -->
+      <article class="card" data-region="kanto">
+        <div class="card-media">
+          <span class="badge kanto">関東</span>
+          <img src="images/mochitsuki.webp" alt="餅つき大会の様子" width="1100" height="733" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3>餅つき大会</h3>
+          <!-- 参加人数は実際の数値に差し替えてください -->
+          <p class="card-meta">2026.1.24 ・ 参加15名</p>
+          <p>大久保公園で行われた、安部明恵さん主催の餅つき大会です。地域の方々と協力しながら、事前準備から運営、調理まで幅広く関わる貴重な経験になりました。</p>
+        </div>
+      </article>
+
+      <!-- ============ イベント: 関東RVP交流会 ============ -->
+      <article class="card" data-region="kanto">
+        <div class="card-media">
+          <span class="badge kanto">関東</span>
+          <img src="images/rvp-mixer.webp" alt="関東RVP交流会の様子" width="1100" height="733" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3>関東RVP交流会</h3>
+          <!-- 参加人数は実際の数値に差し替えてください -->
+          <p class="card-meta">2026.4.24 ・ 参加6名</p>
+          <p>「REALVALUE CLUB」最上位レイヤーのREALVALUE PRIME会員の方々にピッチを実施しました。一流の経営者が持つ実践知を、直接学べる貴重な機会になりました。</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="join">
+  <div class="wrap">
+    <h2>気になったら、まずは合同説明会から。</h2>
+    <p>活動の詳細や参加までの流れは、合同説明会でご案内しています。</p>
+    <!-- 合同説明会フォームURL(反映済み) -->
+    <a class="btn-line" href="https://rvss05.github.io/rvss-faq/gousetsu-redirect.html?utm_source=line&utm_medium=official_line&utm_campaign=gousetsu_form">合同説明会を確認する</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 REALVALUE STUDENTS</p>
+    <p>Make Japan a Challenger Again.</p>
+  </div>
+</footer>
+
+<script>
+  // 関西・関東の絞り込みフィルター
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('#eventGrid .card');
+  const grid = document.getElementById('eventGrid');
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterButtons.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
+      const filter = btn.dataset.filter;
+
+      let visibleCount = 0;
+      cards.forEach(card => {
+        const match = filter === 'all' || card.dataset.region.split(' ').includes(filter);
+        card.style.display = match ? '' : 'none';
+        if (match) visibleCount++;
+      });
+
+      const existingEmpty = grid.querySelector('.empty-state');
+      if (existingEmpty) existingEmpty.remove();
+
+      if (visibleCount === 0) {
+        const empty = document.createElement('div');
+        empty.className = 'empty-state';
+        empty.innerHTML = '<strong>関東開催のイベントは近日公開予定です</strong>準備が整い次第、こちらに追加していきます。';
+        grid.appendChild(empty);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
